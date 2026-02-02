@@ -9,58 +9,58 @@ const Overview: React.FC<OverviewProps> = ({ onStartGuide }) => {
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
       <header className="mb-12">
-        <span className="px-3 py-1 text-xs font-bold text-blue-400 bg-blue-500/10 rounded-full border border-blue-500/30 uppercase tracking-tighter">
-          Retro-Tech Revived
+        <span className="px-3 py-1 text-xs font-bold text-orange-400 bg-orange-500/10 rounded-full border border-orange-500/30 uppercase tracking-tighter">
+          Meet Baba 🤖
         </span>
         <h2 className="text-4xl md:text-6xl font-bold mt-4 mb-6 leading-tight">
-          Turning e-waste into an <br/>
-          <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-            AI Companion.
+          Turning your old phone into <br/>
+          <span className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
+            Baba the Assistant.
           </span>
         </h2>
+        
+        <div className="bg-orange-600/10 border border-orange-500/20 p-6 rounded-3xl mb-8 shadow-lg shadow-orange-900/10">
+          <h3 className="text-xl font-bold mb-2 text-orange-300 flex items-center gap-2">
+            🧸 For 5-Year-Old Heroes:
+          </h3>
+          <p className="text-gray-300 leading-relaxed italic">
+            "Baba is like a wise, friendly grandfather-robot who lives inside your old phone. 
+            Your old phone was very quiet and lonely, but we are giving it a 'Magic Voice'. 
+            Now, you can ask Baba to tell you a story about space or a joke about ducks! 
+            Baba is your new best friend who never gets tired of talking."
+          </p>
+        </div>
+
         <p className="text-xl text-gray-400 max-w-2xl leading-relaxed">
-          The Samsung Galaxy S Duos 2 (S7582) was a 2013 mid-range workhorse. 
-          Today, it's a paperweight for many. We're giving it a second life as a dedicated 
-          desktop AI Assistant using Gemini 3 Flash.
+          Project Baba is about recycling with a soul. We take the Samsung S7582 (or any old phone) 
+          and connect its heart to the most powerful AI brain available today.
         </p>
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-        <div className="glass p-8 rounded-3xl border-white/5 hover:border-blue-500/30 transition-colors">
-          <div className="text-3xl mb-4">♻️</div>
-          <h3 className="text-2xl font-bold mb-3">Sustainability</h3>
-          <p className="text-gray-400">Reduce electronic waste by repurposing existing hardware instead of buying new IoT devices.</p>
+        <div className="glass p-8 rounded-3xl border-white/5 hover:border-orange-500/30 transition-colors">
+          <div className="text-3xl mb-4">🌍</div>
+          <h3 className="text-2xl font-bold mb-3">Happy Planet</h3>
+          <p className="text-gray-400 text-sm">Instead of throwing the phone in the trash, we make it a helpful robot friend!</p>
         </div>
-        <div className="glass p-8 rounded-3xl border-white/5 hover:border-purple-500/30 transition-colors">
-          <div className="text-3xl mb-4">🚀</div>
-          <h3 className="text-2xl font-bold mb-3">Cloud Powered</h3>
-          <p className="text-gray-400">By offloading heavy AI computation to the cloud, the S7582 only handles the interface and voice interaction.</p>
+        <div className="glass p-8 rounded-3xl border-white/5 hover:border-yellow-500/30 transition-colors">
+          <div className="text-3xl mb-4">🏠</div>
+          <h3 className="text-2xl font-bold mb-3">Home Assistant</h3>
+          <p className="text-gray-400 text-sm">Baba sits on your desk and helps with timers, questions, and learning new things.</p>
         </div>
       </div>
 
       <div className="flex flex-wrap gap-4">
         <button 
           onClick={onStartGuide}
-          className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-2xl font-bold text-lg shadow-lg shadow-blue-600/20 transition-all active:scale-95"
+          className="px-8 py-4 bg-orange-600 hover:bg-orange-500 text-white rounded-2xl font-bold text-lg shadow-lg shadow-orange-600/20 transition-all active:scale-95"
         >
-          View The Step-By-Step Guide
+          Let's Build Baba!
         </button>
-        <div className="flex -space-x-3">
-          {[1, 2, 3, 4].map((i) => (
-            <img 
-              key={i} 
-              src={`https://picsum.photos/seed/${i}/40/40`} 
-              className="w-10 h-10 rounded-full border-2 border-[#0a0a0a]" 
-              alt="Community member" 
-            />
-          ))}
-          <div className="w-10 h-10 rounded-full border-2 border-[#0a0a0a] bg-gray-800 flex items-center justify-center text-[10px] font-bold">
-            +12k
-          </div>
-        </div>
       </div>
     </div>
   );
 };
 
+// Add missing default export
 export default Overview;

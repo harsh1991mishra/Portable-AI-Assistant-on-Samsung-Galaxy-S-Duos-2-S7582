@@ -5,7 +5,7 @@ import { generateAiResponse, generateSpeech } from '../services/gemini';
 
 const Demo: React.FC = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([
-    { role: 'model', text: 'Phoenix Online. Ready for your command, Harsh.', timestamp: new Date() }
+    { role: 'model', text: 'Hello Harsh! Baba is here to help you. What shall we do today?', timestamp: new Date() }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -35,7 +35,6 @@ const Demo: React.FC = () => {
     const ctx = audioContextRef.current;
     const audioData = decode(base64Data);
     
-    // Raw PCM decoding for Gemini TTS
     const dataInt16 = new Int16Array(audioData.buffer);
     const buffer = ctx.createBuffer(1, dataInt16.length, 24000);
     const channelData = buffer.getChannelData(0);
@@ -63,7 +62,6 @@ const Demo: React.FC = () => {
     setMessages(prev => [...prev, modelMsg]);
     setIsLoading(false);
 
-    // Get Voice Response
     const speechData = await generateSpeech(responseText);
     if (speechData) {
       playAudio(speechData);
@@ -73,7 +71,7 @@ const Demo: React.FC = () => {
   const startListening = () => {
     const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
     if (!SpeechRecognition) {
-      alert("Voice recognition not supported on this browser.");
+      alert("Voice recognition not supported. Try using Chrome or Kiwi Browser!");
       return;
     }
 
@@ -91,23 +89,23 @@ const Demo: React.FC = () => {
 
   return (
     <div className="flex flex-col h-[calc(100vh-8rem)] md:h-[750px] glass rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl">
-      {/* Retro Samsung Status Bar Mockup */}
-      <div className="bg-black/60 px-6 py-2 flex justify-between items-center text-[10px] text-blue-400 font-mono border-b border-white/5">
+      {/* Device Status Bar Mockup */}
+      <div className="bg-black/60 px-6 py-2 flex justify-between items-center text-[10px] text-orange-400 font-mono border-b border-white/5">
         <div className="flex gap-3">
-          <span>GALAXY S Duos 2</span>
+          <span>BABA TERMINAL</span>
           <span className="text-gray-600">|</span>
-          <span>4G LTE</span>
+          <span>S7582</span>
         </div>
         <div className="flex gap-2 items-center">
-          <span className="text-gray-500">PROJECT PHOENIX</span>
-          <div className="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.8)]"></div>
+          <span className="text-gray-500 text-[8px]">CORE CONNECTED</span>
+          <div className="w-2 h-2 rounded-full bg-orange-500 shadow-[0_0_8px_rgba(249,115,22,0.8)] animate-pulse"></div>
         </div>
       </div>
 
       {/* Chat Area */}
       <div 
         ref={scrollRef}
-        className="flex-1 overflow-y-auto p-6 space-y-6 scroll-smooth bg-gradient-to-b from-transparent to-blue-900/5"
+        className="flex-1 overflow-y-auto p-6 space-y-6 scroll-smooth bg-gradient-to-b from-transparent to-orange-900/5"
       >
         {messages.map((msg, i) => (
           <div 
@@ -116,7 +114,7 @@ const Demo: React.FC = () => {
           >
             <div className={`max-w-[85%] p-5 rounded-3xl ${
               msg.role === 'user' 
-                ? 'bg-blue-600 text-white rounded-br-none shadow-xl shadow-blue-600/20' 
+                ? 'bg-orange-600 text-white rounded-br-none shadow-xl shadow-orange-600/20' 
                 : 'bg-white/5 text-gray-200 rounded-bl-none border border-white/10 backdrop-blur-sm'
             }`}>
               <p className="text-sm leading-relaxed tracking-wide">{msg.text}</p>
@@ -124,7 +122,7 @@ const Demo: React.FC = () => {
                 <span className="text-[10px]">
                   {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                 </span>
-                {msg.role === 'model' && <span className="text-[10px]">AI Core v3.0</span>}
+                {msg.role === 'model' && <span className="text-[10px]">Baba Logic v1.0</span>}
               </div>
             </div>
           </div>
@@ -132,15 +130,15 @@ const Demo: React.FC = () => {
         {isLoading && (
           <div className="flex justify-start">
             <div className="bg-white/5 px-5 py-4 rounded-full flex gap-2 border border-white/5">
-              <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce"></div>
-              <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
-              <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+              <div className="w-1.5 h-1.5 bg-orange-400 rounded-full animate-bounce"></div>
+              <div className="w-1.5 h-1.5 bg-orange-400 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+              <div className="w-1.5 h-1.5 bg-orange-400 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
             </div>
           </div>
         )}
       </div>
 
-      {/* Input Area - Rebuilt for Voice Portability */}
+      {/* Input Area */}
       <div className="p-6 bg-black/40 backdrop-blur-xl border-t border-white/10">
         <div className="flex gap-3 items-center">
           <button 
@@ -160,23 +158,18 @@ const Demo: React.FC = () => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-              placeholder={isListening ? "Listening..." : "Type or speak..."}
-              className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-blue-500/50 transition-all text-sm placeholder:text-gray-600"
+              placeholder={isListening ? "Baba is listening..." : "Say something..."}
+              className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-orange-500/50 transition-all text-sm placeholder:text-gray-600"
             />
           </div>
 
           <button 
             onClick={() => handleSend()}
             disabled={isLoading || !input.trim()}
-            className="w-14 h-14 flex items-center justify-center bg-blue-600 hover:bg-blue-500 disabled:opacity-30 disabled:grayscale rounded-2xl transition-all shadow-lg shadow-blue-600/20"
+            className="w-14 h-14 flex items-center justify-center bg-orange-600 hover:bg-orange-500 disabled:opacity-30 disabled:grayscale rounded-2xl transition-all shadow-lg shadow-orange-600/20"
           >
             <span className="text-xl">⤴️</span>
           </button>
-        </div>
-        <div className="flex justify-center mt-4">
-          <div className="px-4 py-1 rounded-full bg-white/5 border border-white/5 text-[9px] text-gray-500 tracking-widest uppercase font-bold">
-            Portable AI Interface • S7582
-          </div>
         </div>
       </div>
     </div>

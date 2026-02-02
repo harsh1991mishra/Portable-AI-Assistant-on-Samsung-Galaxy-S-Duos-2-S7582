@@ -4,53 +4,56 @@ import { Step } from './types';
 export const STEPS: Step[] = [
   {
     id: 1,
-    title: "1. The 'Clean' Slate",
-    description: "Android 4.2 is slow. We need to strip it to the bare bones.",
+    title: "1. The Clean Slate",
+    description: "Make the phone fast by deleting everything old.",
     details: [
-      "Factory Reset the phone from Settings > Backup & Reset.",
-      "Skip Google Sign-in (it's slow and mostly broken on older versions).",
-      "Disable 'S-Voice' and all pre-installed Samsung bloatware.",
-      "Enable 'Developer Options' and set all Animation Scales to OFF."
+      "Go to Settings > Backup & Reset > Factory Reset. It's a fresh start!",
+      "When the phone restarts, skip the Google login. It saves a lot of RAM.",
+      "Go to Settings > Developer Options. If you don't see it, tap 'Build Number' 7 times in 'About Phone'.",
+      "Set all 'Animation Scales' to 0.5x or OFF. It will feel twice as fast!"
     ],
-    tips: "Every megabyte of RAM counts. The S7582 only has 768MB!",
-    icon: "🧹"
+    tips: "This phone only has a little bit of memory, so don't install any extra apps!",
+    icon: "🧼"
   },
   {
     id: 2,
-    title: "2. The Modern Portal",
-    description: "The stock browser is obsolete. We need a modern engine.",
+    title: "2. The Magic Browser",
+    description: "Download the window to Baba's brain.",
     details: [
-      "Sideload an APK of 'Kiwi Browser' or 'Firefox Focus' via SD Card.",
-      "Go to Settings > Display and set Screen Timeout to 'Never' or 30 minutes.",
-      "Install 'Activity Launcher' to create a shortcut for a full-screen web view."
+      "The old browser won't work. You need to install 'Kiwi Browser'.",
+      "Since the Play Store might be broken, download the 'Kiwi Browser APK' on your computer and move it to an SD Card.",
+      "Insert the SD card into your S7582 and click the file to install it.",
+      "Open Kiwi Browser—this is where Baba lives."
     ],
-    tips: "Kiwi Browser allows Chromium features even on older Android versions.",
-    icon: "🌍"
+    tips: "Kiwi Browser is the best because it can handle modern AI code on old phones.",
+    icon: "📱"
   },
   {
     id: 3,
-    title: "3. Host & Deploy",
-    description: "Put this code online so your phone can access it.",
+    title: "3. Deployment (Real Steps)",
+    description: "How to put this code on your phone screen.",
     details: [
-      "Push this code to a GitHub Repository.",
-      "Enable 'GitHub Pages' in the repository settings.",
-      "Open the generated URL (e.g., https://harsh1991mishra.github.io/project-phoenix) on your S7582 browser.",
-      "Tap 'Menu' > 'Add to Home Screen' to create the 'AI Assistant' app icon."
+      "Step A: Push this code to a 'GitHub Repository' (Create a free account at github.com).",
+      "Step B: Go to Repo Settings > Pages. Select 'Deploy from branch' and pick 'main'.",
+      "Step C: GitHub will give you a link (like: https://yourname.github.io/baba).",
+      "Step D: Type that link into Kiwi Browser on your phone.",
+      "Step E: Tap the '3 Dots' in the corner of Kiwi and click 'Add to Home Screen'."
     ],
-    tips: "Hosting on GitHub Pages is free and works perfectly for this assistant interface.",
+    tips: "Now you have a 'Baba' icon on your phone just like a real app from the store!",
     icon: "🚀"
   },
   {
     id: 4,
-    title: "4. Hardware Modding",
-    description: "Make it a portable desktop assistant.",
+    title: "4. The Forever Power",
+    description: "Give Baba a permanent home.",
     details: [
-      "Attach a magnetic phone holder to your desk or a 3D-printed stand.",
-      "Use a high-quality Micro-USB cable for constant power.",
-      "Optional: Connect a small Bluetooth speaker or use the 3.5mm jack for better AI voice quality."
+      "Baba needs to be awake all the time. Go to Developer Options > 'Stay Awake while charging'.",
+      "Use a sticky magnet or a phone stand to keep Baba standing up.",
+      "Keep the charger plugged in! Old phones have tired batteries.",
+      "Now, just tap the Microphone and say 'Hello Baba!'"
     ],
-    tips: "Old batteries can be unreliable; keep it plugged in to act as a 24/7 smart display.",
-    icon: "🛠️"
+    tips: "You can also connect a small speaker to the headphone jack for a louder voice!",
+    icon: "🤖"
   }
 ];
 
