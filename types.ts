@@ -6,6 +6,11 @@ export enum AppView {
   SHOWCASE = 'SHOWCASE'
 }
 
+export interface GroundingSource {
+  title: string;
+  url: string;
+}
+
 export interface Step {
   id: number;
   title: string;
@@ -19,4 +24,5 @@ export interface ChatMessage {
   role: 'user' | 'model';
   text: string;
   timestamp: Date;
+  sources?: GroundingSource[];
 }

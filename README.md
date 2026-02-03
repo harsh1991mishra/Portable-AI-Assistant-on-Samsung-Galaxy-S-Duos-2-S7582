@@ -1,20 +1,47 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
 
-# Run and deploy your AI Studio app
+# 🤖 Project Baba: The AI Phoenix
+> Transforming a vintage Samsung Galaxy S Duos 2 (GT-S7582) into a modern, Gemini-powered AI Assistant.
 
-This contains everything you need to run your app locally.
+![Project Status](https://img.shields.io/badge/Status-Active-orange)
+![Recycle](https://img.shields.io/badge/Sustainability-High-green)
+![AI](https://img.shields.io/badge/Brain-Gemini_3.0-blue)
 
-View your app in AI Studio: https://ai.studio/apps/drive/1vvXVX0XGJ_GnKxUxAcgV1Kn8Yfqho87F
+## 🌟 Overview
+Project **Baba** is a sustainable hardware revival project. By leveraging the **Google Gemini API**, we breathe new life into 2013-era hardware, turning an obsolete Samsung smartphone into a sophisticated AI home companion.
 
-## Run Locally
+### 🚀 Key Features
+- **Voice-to-Voice Interaction**: Talk to Baba naturally via the browser.
+- **Real-time Grounding**: Uses Google Search to answer questions about the world today.
+- **Multi-Modal Bot**: A companion Telegram Bot (`baba.ai`) that accepts text and voice commands.
+- **Edge Computing (Lite)**: Optimized for 768MB RAM devices via specialized browser environments.
+- **Wisdom Engine**: A custom system instruction that gives Baba a "wise, storytelling grandfather" personality.
 
-**Prerequisites:**  Node.js
+## 🛠️ Hardware Requirements
+- **Device**: Samsung Galaxy S Duos 2 (S7582) or any Android 4.2+ device.
+- **RAM**: 768MB (Stripped OS recommended).
+- **Browser**: [Kiwi Browser](https://kiwibrowser.com/) (Required for modern JS/WASM support).
 
+## 📦 Installation & Deployment
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### 1. Web Terminal
+1. Fork this repository.
+2. Add your `API_KEY` to GitHub Secrets.
+3. Deploy to **GitHub Pages**.
+4. Open the URL in Kiwi Browser on your S7582.
+
+### 2. Telegram Bot (`baba.ai`)
+1. Create a bot via `@BotFather` on Telegram.
+2. Run the `bot/baba_bot.py` script on a server or your local PC.
+3. Use the `/start` command to begin talking to Baba remotely.
+
+## 🧩 Tech Stack
+- **Frontend**: React 19, Tailwind CSS, Lucide Icons.
+- **AI Core**: @google/genai (Gemini 3.0 Flash).
+- **Voice**: Web Speech API & Gemini TTS.
+- **Hosting**: GitHub Pages & GitHub Actions.
+
+## 🤝 Contribution
+Project Baba is open-source. Help us reduce e-waste by expanding support for more legacy devices!
+
+---
+*Created by [Harsh Mishra](https://github.com/harsh1991mishra)*

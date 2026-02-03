@@ -4,56 +4,55 @@ import { Step } from './types';
 export const STEPS: Step[] = [
   {
     id: 1,
-    title: "1. The Clean Slate",
-    description: "Make the phone fast by deleting everything old.",
+    title: "1. Hardware Strip-Down",
+    description: "Prepare the S7582 for ultra-lean operation.",
     details: [
-      "Go to Settings > Backup & Reset > Factory Reset. It's a fresh start!",
-      "When the phone restarts, skip the Google login. It saves a lot of RAM.",
-      "Go to Settings > Developer Options. If you don't see it, tap 'Build Number' 7 times in 'About Phone'.",
-      "Set all 'Animation Scales' to 0.5x or OFF. It will feel twice as fast!"
+      "Factory Reset via Recovery Mode (Vol Up + Home + Power).",
+      "Disable 'Google Play Services' if possible to save 200MB RAM.",
+      "Install 'Nova Launcher' or 'FLauncher' for a minimalist UI.",
+      "Set animations to 0x in Developer Settings."
     ],
-    tips: "This phone only has a little bit of memory, so don't install any extra apps!",
-    icon: "🧼"
+    tips: "Every megabyte of RAM counts on the S7582's 768MB limit.",
+    icon: "⚙️"
   },
   {
     id: 2,
-    title: "2. The Magic Browser",
-    description: "Download the window to Baba's brain.",
+    title: "2. Browser Uplift",
+    description: "Bridge the gap between 2013 and 2025.",
     details: [
-      "The old browser won't work. You need to install 'Kiwi Browser'.",
-      "Since the Play Store might be broken, download the 'Kiwi Browser APK' on your computer and move it to an SD Card.",
-      "Insert the SD card into your S7582 and click the file to install it.",
-      "Open Kiwi Browser—this is where Baba lives."
+      "Download Kiwi Browser APK (v116+ supported).",
+      "Sideload via USB Debugging or SD Card.",
+      "Enable 'Desktop Site' by default for better rendering.",
+      "Kiwi provides the V8 engine Baba needs to think."
     ],
-    tips: "Kiwi Browser is the best because it can handle modern AI code on old phones.",
-    icon: "📱"
+    tips: "The stock browser will fail; Kiwi is your only window to the modern web.",
+    icon: "🌐"
   },
   {
     id: 3,
-    title: "3. Deployment (Real Steps)",
-    description: "How to put this code on your phone screen.",
+    title: "3. Deploy to GitHub",
+    description: "Give Baba a home on the cloud.",
     details: [
-      "Step A: Push this code to a 'GitHub Repository' (Create a free account at github.com).",
-      "Step B: Go to Repo Settings > Pages. Select 'Deploy from branch' and pick 'main'.",
-      "Step C: GitHub will give you a link (like: https://yourname.github.io/baba).",
-      "Step D: Type that link into Kiwi Browser on your phone.",
-      "Step E: Tap the '3 Dots' in the corner of Kiwi and click 'Add to Home Screen'."
+      "Push this code to your GitHub Repository.",
+      "Set your API_KEY in GitHub Repository Secrets.",
+      "Enable GitHub Pages under Settings > Pages.",
+      "Wait for the green checkmark on your Actions tab."
     ],
-    tips: "Now you have a 'Baba' icon on your phone just like a real app from the store!",
+    tips: "Deployment takes about 2 minutes. Once done, your URL is live globally.",
     icon: "🚀"
   },
   {
     id: 4,
-    title: "4. The Forever Power",
-    description: "Give Baba a permanent home.",
+    title: "4. Telegram Bot (baba.ai)",
+    description: "Control your phone assistant from anywhere.",
     details: [
-      "Baba needs to be awake all the time. Go to Developer Options > 'Stay Awake while charging'.",
-      "Use a sticky magnet or a phone stand to keep Baba standing up.",
-      "Keep the charger plugged in! Old phones have tired batteries.",
-      "Now, just tap the Microphone and say 'Hello Baba!'"
+      "Message @BotFather on Telegram to create 'baba_assistant_bot'.",
+      "Get your BOT_TOKEN and add it to your server environment.",
+      "Run the provided Python script in the /bot folder.",
+      "Now you can text or voice command Baba from your primary phone!"
     ],
-    tips: "You can also connect a small speaker to the headphone jack for a louder voice!",
-    icon: "🤖"
+    tips: "The Telegram Bot uses the same AI brain as the phone, keeping the personality consistent.",
+    icon: "📱"
   }
 ];
 
